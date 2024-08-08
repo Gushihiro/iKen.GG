@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Anime, getSeasonalAnime } from "@/lib/anime";
 import Image from "next/image";
@@ -10,7 +11,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="grid grid-cols-4 gap-3">
-        {seasonalAnime.map((anime: Anime, i: number) => (
+        {seasonalAnime.map((anime: { node: Anime }, i: number) => (
           <Card key={i}>
             <Link href={`/anime/${anime.node.id}`}>
               <CardHeader className="text-center h-2/6 text-xl dark:bg-slate-900 bg-slate-300 rounded-t">
